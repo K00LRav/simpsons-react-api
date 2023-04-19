@@ -1,14 +1,14 @@
 .homepage-container{
-    min-height: 89vh;
+    min-height: 100vh;
+    background-color: burlywood;
 }
 
 .homepage-container h1{
     text-align: center;
-    margin: 50px;
+    padding: 30px;
 }
 
 .characters{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }

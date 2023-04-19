@@ -5,8 +5,8 @@ function CharacterCards({characters}) {
   return (
     <div className='character-card'>
         <img src={characters.image} alt="" />
-    <p>{characters.character}</p>
-    <p>{characters.quote}</p>
+    <h3>{characters.character}</h3>
+    <p>"{characters.quote}"</p>
     </div>
   )
 }
