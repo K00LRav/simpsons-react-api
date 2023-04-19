@@ -1,0 +1,13 @@
+.homepage-container{
+    min-height: 100vh;
+}
+
+.homepage-container h1{
+    text-align: center;
+}
+
+.characters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

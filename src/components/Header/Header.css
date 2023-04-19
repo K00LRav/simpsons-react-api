@@ -1,0 +1,8 @@
+.header-container{
+    background-color: darkred;
+    height: 60px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
