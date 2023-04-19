@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className='header-container'>
             <div>
-            <a href='/'>Simpsons</a>
+            <a href='/'>Get New Quote</a>
             </div>
             
         </div>

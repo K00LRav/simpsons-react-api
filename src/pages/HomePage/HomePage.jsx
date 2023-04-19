@@ -14,22 +14,22 @@ function HomePage() {
             //this is to test console.log works in the function
             // console.log('homepage loaded')
 
-            axios.get('https://api.sampleapis.com/simpsons/characters')
+            axios.get('https://thesimpsonsquoteapi.glitch.me/quotes')
             .then(results=>{
-                // console.log(results.data)
+                // console.log(results)
                 //this stores the data
                 setCharacters(results.data)
             })
             .catch(err => console.log(err))
-        }
+        },[]
     )
 
   return (
     <div className='homepage-container'>
-        <h1>Simpson Characters</h1>
+        <h1>Simpson Character Quotes</h1>
         <div className="characters">
             {
-                characters.map(item=><CharacterCards key={item.id} characters={item} />)
+                characters.map(item=> <CharacterCards key={item.id} characters={item} />)
             }
         </div>
 

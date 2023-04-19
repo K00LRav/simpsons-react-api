@@ -4,7 +4,9 @@ import './CharacterCards.css'
 function CharacterCards({characters}) {
   return (
     <div className='character-card'>
-    <p>{characters.name}</p>
+        <img src={characters.image} alt="" />
+    <p>{characters.character}</p>
+    <p>{characters.quote}</p>
     </div>
   )
 }
