@@ -26,12 +26,13 @@ function HomePage() {
 
   return (
     <div className='homepage-container'>
-        <h1>Simpson Character Quotes</h1>
+        <h1>Character Quotes</h1>
         <div className="characters">
             {
                 characters.map(item=> <CharacterCards key={item.id} characters={item} />)
             }
         </div>
+        <div className='get-quote'><a href='/'>Get New Quote</a></div>
 
         </div>
   )

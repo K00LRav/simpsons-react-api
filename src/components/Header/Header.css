@@ -6,3 +6,7 @@
     align-items: center;
     padding: 25px;
 }
+
+.header-container a{
+    font-size: 30px;
+}
