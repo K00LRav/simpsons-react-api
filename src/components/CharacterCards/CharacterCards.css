@@ -1,6 +1,6 @@
 .character-card{
     margin:20px;
-    width:320px;
+    width:300px;
     display: flex;
     flex-direction: column;
     align-items: center;
