@@ -24,6 +24,13 @@ function HomePage() {
         },[]
     )
 
+    const handleNewQuote = () =>{
+        console.log("testing")
+        {
+            characters
+        }
+    }
+
   return (
     <div className='homepage-container'>
         <h1>Character Quotes</h1>
@@ -32,8 +39,7 @@ function HomePage() {
                 characters.map(item=> <CharacterCards key={item.id} characters={item} />)
             }
         </div>
-        <div className='get-quote'><a href='/'>Get New Quote</a></div>
-
+        <button className='get-quote' onClick={handleNewQuote}>Get New Quote</button>
         </div>
   )
 }
