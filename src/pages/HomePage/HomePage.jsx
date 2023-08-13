@@ -24,11 +24,16 @@ function HomePage() {
         },[]
     )
 
-    const handleNewQuote = () =>{
-        console.log("testing")
-        {
-            characters
-        }
+    const handleNewQuote =() => {
+        // console.log("testing")
+        axios.get('https://thesimpsonsquoteapi.glitch.me/quotes')
+        .then(results=>{
+            // console.log(results)
+            //this stores the data
+            setCharacters(results.data)
+        })
+        .catch(err => console.log(err))
+        
     }
 
   return (
@@ -36,7 +41,7 @@ function HomePage() {
         <h1>Character Quotes</h1>
         <div className="characters">
             {
-                characters.map(item=> <CharacterCards key={item.id} characters={item} />)
+                characters.map(item=> <CharacterCards key={item} characters={item} />)
             }
         </div>
         <button className='get-quote' onClick={handleNewQuote}>Get New Quote</button>
