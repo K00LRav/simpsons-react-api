@@ -27,5 +27,6 @@
     border-radius: 10px;
     width: 170px;
     height: 40px;
-    border: 2px solid gray;
+    border: 2px solid;
+    border-color: gray;
 }
