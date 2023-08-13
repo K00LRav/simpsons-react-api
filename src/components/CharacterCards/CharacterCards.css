@@ -33,4 +33,7 @@
 .character-card p{
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-size: 18px;
 }
