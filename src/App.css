@@ -6,13 +6,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Homer Simpson Revised', sans-serif;
 }
 
 
 a{
   text-decoration: none;
   color: inherit;
-  font-family: 'Homer Simpson Revised', sans-serif;
                                                 
+}
+
+:root{
+  --primary-bg:rgb(102, 92, 171);
+  --light-theme-btn:#430f58;
+  --dark-theme-btn:#c3195d;
+  --white:white;
 }
