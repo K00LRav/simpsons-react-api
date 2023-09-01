@@ -30,6 +30,10 @@
     border-color: gray;
 }
 
+.get-quote:hover{
+    background-color: darkred;
+    color: whitesmoke;
+}
 
 
 
