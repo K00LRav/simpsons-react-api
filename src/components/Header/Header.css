@@ -1,43 +1,57 @@
 .header-container {
-    background: linear-gradient(135deg, var(--simpsons-yellow), var(--simpsons-yellow-light));
-    height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    box-shadow: 0 2px 8px var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background: linear-gradient(135deg, var(--simpsons-yellow), var(--simpsons-yellow-light));
+  height: 83px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container .header-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between logo and text */
+  font-size: 1.75rem; /* Same font size, but can adjust if needed */
+  font-weight: 400;
+  color: var(--simpsons-blue);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-family: 'Bangers', cursive;
+}
+
+.header-container .header-logo {
+  height: 75px; /* Fits within the 70px header height */
+  width: 75px;
+}
+
+.header-container .header-link:hover,
+.header-container .header-link:focus {
+  color: var(--simpsons-red);
+  transform: scale(1.02);
+}
+
+.header-container .header-link:focus {
+  outline: 2px solid var(--simpsons-red);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    height: 60px;
+    padding: 0 1rem;
   }
-  
-  .header-container a {
-    font-size: 1.75rem;
-    font-weight: 400;
-    color: var(--simpsons-blue);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: color 0.3s ease, transform 0.2s ease;
-    font-family: 'Bangers', cursive;
+
+  .header-container .header-link {
+    font-size: 1.5rem; /* Same font size, but can adjust if needed */
+    gap: 0.5rem; /* Slightly smaller gap on mobile */
   }
-  
-  .header-container a:hover,
-  .header-container a:focus {
-    color: var(--simpsons-red);
-    transform: scale(1.02);
+
+  .header-container .header-logo {
+    height: 32px; /* Fits within the 60px mobile header height */
+    width: 32px;
   }
-  
-  .header-container a:focus {
-    outline: 2px solid var(--simpsons-red);
-    outline-offset: 4px;
-  }
-  
-  @media (max-width: 600px) {
-    .header-container {
-      height: 60px;
-      padding: 0 1rem;
-    }
-  
-    .header-container a {
-      font-size: 1.5rem;
-    }
-  }
+}
