@@ -1,39 +1,116 @@
-
-.homepage-container{
-    min-height: 89vh;
-    background-color: burlywood;
+.homepage-container {
+    min-height: calc(100vh - 140px); /* Account for Header (70px) + Footer (70px) */
+    background: var(--neutral-light-gray);
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.homepage-container h1{
-    padding: 15px;
+    padding: 2rem 1rem;
+    color: var(--simpsons-blue);
+    width: 100%;
+  }
+  
+  .homepage-container h1 {
+    padding: 1rem;
     font-family: 'Homer Simpson Revised', sans-serif;
-    font-size: 45px;
-                                                
-}
-
-.characters{
+    font-size: 2.5rem;
+    color: var(--simpsons-yellow);
+    text-shadow: 1px 1px 2px var(--shadow);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .characters {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-}
-
-.get-quote{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    border-radius: 10px;
-    width: 170px;
-    height: 40px;
-    border: 2px solid;
-    border-color: gray;
-}
-
-.get-quote:hover{
-    background-color: darkred;
-    color: whitesmoke;
-}
-
-
-
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 300px;
+  }
+  
+  .characters > * {
+    flex: 0 0 auto;
+  }
+  
+  .error-message {
+    font-size: 1rem;
+    color: var(--simpsons-red);
+    text-align: center;
+    margin: 1rem 0;
+    width: 100%;
+  }
+  
+  .loading-bar-container {
+    width: 320px; /* Matches CharacterCards width */
+    height: 8px;
+    background: var(--neutral-light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1rem auto;
+  }
+  
+  .loading-bar {
+    width: 100%;
+    height: 100%;
+    background: var(--simpsons-yellow); /* Solid Simpsons yellow, #ffd700 */
+    background-size: 200% 100%;
+    animation: loading 2s ease-in-out infinite;
+  }
+  
+  .get-quote {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--simpsons-yellow), var(--simpsons-yellow-light));
+    color: var(--simpsons-blue);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow-light);
+  }
+  
+  .get-quote:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--simpsons-yellow-light), var(--simpsons-yellow));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow);
+  }
+  
+  .get-quote:disabled {
+    background: var(--neutral-light-gray);
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .homepage-container {
+      padding: 1rem 0.5rem;
+    }
+  
+    .homepage-container h1 {
+      font-size: 2rem;
+    }
+  
+    .get-quote {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .loading-bar-container {
+      width: 280px;
+    }
+  }

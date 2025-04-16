@@ -1,15 +1,14 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
 
 function Header() {
   return (
-    <div className='header-container'>
-            <div>
-            <a href='/'>Quotes From The Simpsons</a>
-            </div>
-            
-        </div>
-  )
+    <header className="header-container">
+      <a href="/" aria-label="Home - Quotes From The Simpsons">
+        Quotes From The Simpsons
+      </a>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

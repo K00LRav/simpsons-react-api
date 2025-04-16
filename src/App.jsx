@@ -5,7 +5,6 @@ import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
