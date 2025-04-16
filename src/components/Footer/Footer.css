@@ -1,36 +1,37 @@
 .footer-container {
-    height: 70px;
-    background: linear-gradient(135deg, var(--simpsons-blue), var(--simpsons-blue-dark));
-    color: var(--neutral-light-gray);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 -2px 8px var(--shadow);
+  height: 70px;
+  background: linear-gradient(135deg, var(--simpsons-blue), var(--simpsons-blue-dark));
+  color: var(--neutral-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -2px 8px var(--shadow);
+}
+
+.footer-container p {
+  font-family: 'Bangers', cursive;
+  font-size: 1.25rem;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-container .creator {
+  font-family: 'Homer Simpson Revised', sans-serif; /* Simpsons font for K00L_Rav */
+  color: var(--simpsons-yellow);
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.footer-container .creator:hover {
+  color: var(--simpsons-red);
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    height: 60px;
   }
-  
+
   .footer-container p {
-    font-family: 'Bangers', cursive;
-    font-size: 1.25rem;
-    margin: 0;
-    text-align: center;
+    font-size: 1rem;
   }
-  
-  .footer-container .creator {
-    color: var(--simpsons-yellow);
-    font-weight: 400;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-container .creator:hover {
-    color: var(--simpsons-red);
-  }
-  
-  @media (max-width: 600px) {
-    .footer-container {
-      height: 60px;
-    }
-  
-    .footer-container p {
-      font-size: 1rem;
-    }
-  }
+}

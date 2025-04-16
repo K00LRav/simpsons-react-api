@@ -2,37 +2,28 @@
   width: 320px;
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
-  background: var(--neutral-light-gray); /* Light gray background (#f5f5f5) */
-  box-shadow: 0 4px 12px var(--shadow-light);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.character-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px var(--shadow);
+  border-radius: 0; /* Remove rounded corners for seamless blend */
+  background: var(--neutral-light-gray); /* Matches HomePage container (#f5f5f5) */
+  transition: none; /* Remove card-level transitions */
 }
 
 .character-image {
   width: 100%;
   overflow: hidden;
-  background: none; /* Prevent conflicting backgrounds */
+  background: none;
 }
 
 .character-image img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
   display: block;
-  background-color: #e6f0fa; /* Light Simpsons sky blue */
+  background-color: var(--neutral-light-gray); /* Matches card and HomePage */
   transition: transform 0.3s ease;
 }
 
 .character-card:hover .character-image img {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Hover effect on image only */
 }
 
 .character-content {

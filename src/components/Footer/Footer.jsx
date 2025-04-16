@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer-container">
       <p>
-        Created by <span className="creator">K00L_Rav</span>
+        Created by&nbsp;<span className="creator"> K00L_Rav</span>
       </p>
     </footer>
   );
