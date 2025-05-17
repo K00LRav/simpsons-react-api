@@ -13,12 +13,8 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ],
-  "github": {
+  ],  "github": {
     "enabled": true,
     "silent": false
-  },
-  "analytics": {
-    "enabled": true
   }
 }
