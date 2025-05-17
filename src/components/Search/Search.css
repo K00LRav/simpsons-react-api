@@ -12,12 +12,15 @@
     background: var(--neutral-white);
     border-radius: 12px;
     box-shadow: 0 4px 12px var(--shadow-light);
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    border: 3px solid var(--simpsons-blue-dark);
   }
   
   .search-wrapper:hover,
   .search-wrapper:focus-within {
     box-shadow: 0 6px 16px var(--shadow);
+    border: 3px solid var(--simpsons-yellow);
+    transform: translateY(-3px);
   }
   
   .search-wrapper input {

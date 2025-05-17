@@ -3,6 +3,7 @@ import './HomePage.css';
 import axios from 'axios';
 import CharacterCards from '../../components/CharacterCards/CharacterCards';
 import Search from '../../components/Search/Search';
+import { trackApiCall, trackError } from '../../utils/analytics';
 
 function HomePage() {
   const [characters, setCharacters] = useState([]);
@@ -12,15 +13,31 @@ function HomePage() {
   const fetchQuote = useCallback(async () => {
     setIsLoading(true);
     setError(null);
+    const startTime = performance.now();
+    
     try {
+      // Using our custom analytics helper
       const response = await axios.get('https://thesimpsonsquoteapi.glitch.me/quotes');
       if (!Array.isArray(response.data) || response.data.length === 0) {
         throw new Error('No quotes received');
       }
       setCharacters(response.data);
+      
+      // Track successful API call with duration
+      const duration = Math.round(performance.now() - startTime);
+      trackApiCall('quotes', 'success', duration);
     } catch (err) {
       setError('Failed to fetch quote. Please try again.');
       console.error('Error fetching quote:', err);
+      
+      // Track API request error with detailed information
+      const duration = Math.round(performance.now() - startTime);
+      trackError(
+        'api_error', 
+        err.message, 
+        'HomePage.fetchQuote'
+      );
+      trackApiCall('quotes', 'error', duration);
     } finally {
       setIsLoading(false);
     }

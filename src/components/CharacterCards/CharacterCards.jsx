@@ -1,9 +1,29 @@
 import React from 'react';
 import './CharacterCards.css';
+import { trackCharacterInteraction } from '../../utils/analytics';
 
 function CharacterCards({ characters }) {
+  const handleCardClick = () => {
+    // Track character card interactions using our analytics helper
+    trackCharacterInteraction(
+      characters.character || 'Unknown',
+      'card_click'
+    );
+  };
+
   return (
-    <div className="character-card">
+    <div 
+      className="character-card"
+      onClick={handleCardClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleCardClick();
+        }
+      }}
+      tabIndex="0"
+      role="button"
+      aria-label={`View ${characters.character || 'Unknown'} details`}
+    >
       <div className="character-image">
         <img
           src={characters.image || '/fallback-image.png'}

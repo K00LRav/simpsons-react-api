@@ -2,9 +2,12 @@
   width: 320px;
   display: flex;
   flex-direction: column;
-  border-radius: 0; /* Remove rounded corners for seamless blend */
-  background: var(--neutral-light-gray); /* Matches HomePage container (#f5f5f5) */
-  transition: none; /* Remove card-level transitions */
+  border-radius: 12px; /* Rounded corners for Springfield style */
+  background: var(--neutral-white); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 3px solid var(--simpsons-blue);
+  box-shadow: 4px 4px 0 var(--simpsons-yellow);
+  margin-bottom: 4px;
 }
 
 .character-image {
@@ -18,8 +21,15 @@
   height: auto;
   object-fit: contain;
   display: block;
-  background-color: var(--neutral-light-gray); /* Matches card and HomePage */
+  background-color: var(--neutral-white);
   transition: transform 0.3s ease;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 var(--simpsons-yellow);
 }
 
 .character-card:hover .character-image img {

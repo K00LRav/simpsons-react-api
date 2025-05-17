@@ -1,0 +1,24 @@
+{
+  "name": "springfield-speaks",
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "github": {
+    "enabled": true,
+    "silent": false
+  },
+  "analytics": {
+    "enabled": true
+  }
+}

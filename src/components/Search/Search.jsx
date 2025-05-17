@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react';
 import axios from 'axios';
 import './Search.css';
+import { trackSearch, trackError, trackEvent } from '../../utils/analytics';
 
 function Search({ setCharacters }) {
   const [query, setQuery] = useState('');
@@ -14,11 +15,17 @@ function Search({ setCharacters }) {
       if (!query.trim()) {
         setError('Please enter a character name.');
         inputRef.current.focus();
+        
+        // Track empty search attempt with our analytics helper
+        trackError('empty_search', 'Empty search query', 'Search.handleSubmit');
         return;
       }
 
       setIsLoading(true);
       setError(null);
+      
+      // Track search attempt with our analytics helper
+      trackEvent('search_initiated', { query: query.trim() });
 
       try {
         const response = await axios.get(
@@ -28,16 +35,29 @@ function Search({ setCharacters }) {
         if (!Array.isArray(data) || data.length === 0) {
           setError(`No quotes found for "${query}".`);
           setCharacters([]);
+          
+          // Track no results found with our analytics helper
+          trackSearch(query.trim(), 0);
         } else {
           setCharacters(data);
+          
+          // Track successful search with our analytics helper
+          trackSearch(query.trim(), data.length);
         }
       } catch (err) {
         if (err.response?.status === 404) {
           setError(`No character named "${query}" found.`);
           setCharacters([]);
+          
+          // Track 404 error with our analytics helper
+          trackError('404_not_found', `No character named "${query}" found`, 'Search.handleSubmit');
+          trackSearch(query.trim(), 0);
         } else {
           setError('An error occurred. Please try again.');
           console.error('Search error:', err);
+          
+          // Track general search error with our analytics helper
+          trackError('search_api_error', err.message, 'Search.handleSubmit');
         }
       } finally {
         setIsLoading(false);

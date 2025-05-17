@@ -1,11 +1,12 @@
 .footer-container {
   height: 70px;
-  background: linear-gradient(135deg, var(--simpsons-blue), var(--simpsons-blue-dark));
-  color: var(--neutral-light-gray);
+  background: linear-gradient(135deg, var(--simpsons-green-light), var(--simpsons-green));
+  color: var(--neutral-white);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 -2px 8px var(--shadow);
+  border-top: 6px solid var(--simpsons-yellow); /* Springfield style border */
 }
 
 .footer-container p {

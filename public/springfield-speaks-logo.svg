@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="37.5" cy="37.5" r="35" fill="#FDD835" stroke="#3949AB" stroke-width="4"/>
+  
+  <!-- Speech Bubble -->
+  <path d="M27 20C19.268 20 13 26.268 13 34C13 41.732 19.268 48 27 48H33L43 58V48H48C55.732 48 62 41.732 62 34C62 26.268 55.732 20 48 20H27Z" fill="#FFFFFF" stroke="#3949AB" stroke-width="3"/>
+  
+  <!-- Springfield Initial "S" -->
+  <text x="30" y="42" font-family="Homer Simpson Revised, Arial" font-size="28" fill="#3949AB" font-weight="bold">S</text>
+</svg>

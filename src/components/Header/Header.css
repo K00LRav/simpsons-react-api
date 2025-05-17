@@ -4,23 +4,25 @@
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: 0 4px 12px var(--shadow);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 6px solid var(--simpsons-green); /* Springfield grass line */
 }
 
 .header-container .header-link {
   display: flex;
   align-items: center;
   gap: 0.75rem; /* Space between logo and text */
-  font-size: 1.75rem; /* Same font size, but can adjust if needed */
-  font-weight: 400;
-  color: var(--simpsons-blue);
+  font-size: 2rem; /* Larger font size */
+  font-weight: 700;
+  color: var(--simpsons-blue-dark);
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: color 0.3s ease, transform 0.2s ease;
-  font-family: 'Bangers', cursive;
+  font-family: 'Homer Simpson Revised', sans-serif; /* Using the Simpsons font */
+  text-shadow: 1px 1px 0 var(--neutral-white), -1px -1px 0 var(--neutral-white); /* Comic book style text */
 }
 
 .header-container .header-logo {
@@ -31,11 +33,11 @@
 .header-container .header-link:hover,
 .header-container .header-link:focus {
   color: var(--simpsons-red);
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .header-container .header-link:focus {
-  outline: 2px solid var(--simpsons-red);
+  outline: 3px dotted var(--simpsons-red);
   outline-offset: 4px;
 }
 
